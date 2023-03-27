@@ -1,0 +1,17 @@
+.container {
+    margin: 0 auto;
+    padding-top: 20px;
+    align-items: center;
+    display: flex;
+    max-width: 600px;
+    justify-content: space-between;
+}
+a {
+    text-decoration: none;
+}
+table {
+    width: 100%;
+}
+table, td, tr {
+    border: 1px solid #222;
+}
