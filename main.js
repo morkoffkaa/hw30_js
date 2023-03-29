@@ -5,6 +5,16 @@ const voting = document.querySelectorAll(".voting");
 console.log(smilesAll);
 console.log(counters);
 
+voting.addEventListener("click", (e) => {
+  if (e.target.classList.contain('smile')) {
+    const counter = e.target.nextElementSibling;
+    let count = counter.textContent;
+    count++;
+    counter.innerText = count;
+}
+})
+
+
 // function increaseValue(counter) {
 //     let count = 0;
 
@@ -21,14 +31,7 @@ console.log(counters);
 // You need to attach a listener to a parent element, then check event.target
 // According to your markup parent element, you need to use the tr
 
-voting.addEventListener("click", (e) => {
-  if (e.target.classList.contain('smile')) {
-    const counter = e.target.nextElementSibling;
-    let count = counter.textContent;
-    count++;
-    counter.innerText = count;
-}
-})
+
 
 
 
