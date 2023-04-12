@@ -5,6 +5,18 @@ const voting = document.querySelectorAll(".voting");
 console.log(smilesAll);
 console.log(counters);
 
+function increaseValue(counter) {
+  let count = 0;
+
+  return function() {
+      count++;
+      counter.innerText = count;
+  }
+}
+
+smilesAll.forEach((currentSmile, index) => {
+  currentSmile.addEventListener("click", increaseValue(counters[index]));
+})
 voting.addEventListener("click", (e) => {
   if (e.target.classList.contain('smile')) {
     const counter = e.target.nextElementSibling;
@@ -15,18 +27,7 @@ voting.addEventListener("click", (e) => {
 })
 
 
-// function increaseValue(counter) {
-//     let count = 0;
 
-//     return function() {
-//         count++;
-//         counter.innerText = count;
-//     }
-// }
-
-// smilesAll.forEach((currentSmile, index) => {
-//     currentSmile.addEventListener("click", increaseValue(counters[index]));
-// })
 
 // You need to attach a listener to a parent element, then check event.target
 // According to your markup parent element, you need to use the tr
