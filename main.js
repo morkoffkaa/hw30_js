@@ -1,31 +1,16 @@
 const smilesAll = document.querySelectorAll(".smile");
 const counters = document.querySelectorAll(".counter");
-const voting = document.querySelectorAll(".voting");
 
 console.log(smilesAll);
 console.log(counters);
 
-function increaseValue(counter) {
-  let count = 0;
+document.querySelector(".voting").addEventListener("click", (event) => {
+    if (event.target.classList.contains("smile")) {
+        const counter = event.target.nextElementSibling;
 
-  return function() {
-      count++;
-      counter.innerText = count;
-  }
-}
-
-smilesAll.forEach((currentSmile, index) => {
-  currentSmile.addEventListener("click", increaseValue(counters[index]));
-})
-voting.addEventListener("click", (e) => {
-  if (e.target.classList.contain('smile')) {
-    const counter = e.target.nextElementSibling;
-    let count = counter.textContent;
-    count++;
-    counter.innerText = count;
-}
-})
-
+        counter.innerText = Number(counter.textContent) + 1;
+    }
+});
 
 
 
